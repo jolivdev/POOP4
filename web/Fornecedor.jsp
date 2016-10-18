@@ -32,7 +32,7 @@
         response.sendRedirect(request.getRequestURI());
     }
     if(request.getParameter("excluir")!=null){
-        String par = request.getParameter("1");
+        String par = request.getParameter("indice");
         int i = Integer.parseInt(par);
         lista.remove(i);
         response.sendRedirect(request.getRequestURI());
@@ -96,7 +96,7 @@
                 <td><%= p.getCnpj() %></td>                
                 <td>
                     <form>
-                        <input type="hidden" name="1" value="<%= lista.indexOf(p)%>"/>
+                        <input type="hidden" name="indice" value="<%= lista.indexOf(p)%>"/>
                         <input type="submit" name="excluir" value="Excluir"/>
                     </form>
                 </td>
