@@ -1,7 +1,5 @@
 package br.com.fatecpg.cad;
 
-/* @author Pedro Augusto Gonçalez */
-
 public class Cliente extends Pessoa{
     private String CPF;
     private String RG;

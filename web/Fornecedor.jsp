@@ -1,14 +1,8 @@
-<%-- 
-    Document   : Fornecedor
-    Created on : 17/10/2016, 13:12:17
-    Author     : Vilete
---%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="br.com.fatecpg.cad.Database"%>
 <%@page import="br.com.fatecpg.cad.Fornecedor"%>
 <%@page import="br.com.fatecpg.cad.Endereco"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
 <%
     ArrayList<Fornecedor> lista = Database.getFornecedor();
     if (request.getParameter("incluir") != null) {
@@ -31,77 +25,82 @@
         lista.add(p);
         response.sendRedirect(request.getRequestURI());
     }
-    if(request.getParameter("excluir")!=null){
+    if (request.getParameter("excluir") != null) {
         String par = request.getParameter("indice");
         int i = Integer.parseInt(par);
         lista.remove(i);
         response.sendRedirect(request.getRequestURI());
     }
 %>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Fornecedor</title>
-        
-    </head>
-    <body>
-        <form>
-        <fieldset>
-            <legend>Incluir</legend>
-            
-                Nome: <input type="text" name="nome"/>
-                Email: <input type="text" name="email"/>
-                Telefone: <input type="text" name="telefone"/>               
-        </fieldset>
-            
-        <fieldset>    
-            <legend>Endereço</legend>
-            Cidade: <input type="text" name="cidade"/>
-            Estado: <input type="text" name="estado"/>
-            Logradouro: <input type="text" name="logradouro"/>
-            Numero: <input type="text" name="numero"/>
-        </fieldset>    
-            
-        <fieldset>
-            <legend>Pessoa Jurídica</legend>
-            Razão Social: <input type="text" name="razaosocial"/>
-            CNPJ: <input type="text" name="cnpj"/>
-        </fieldset>
-            
-        <input type="submit" name="incluir" value="Incluir"/>
-            
-        </form>
-        <h2>Lista</h2>
-        <table border="1">
-            <tr>
-                <th>ID</th>
-                <th>Nome</th>
-                <th>Email</th>
-                <th>Telefone</th>
-                <th>Endereço</th>
-                <th>Razão Social</th>
-                <th>CNPJ</th>
-                
-                
-                <th>Remover</th>
-            </tr>
-            <% for(Fornecedor p: lista) { %>
-            <tr>
-                <td><%= lista.indexOf(p) %></td>
-                <td><%= p.getNome() %></td>
-                <td><%= p.getEmail() %></td>
-                <td><%= p.getTelefone() %></td>
-                <td><%= String.format("%1s, %2s - %3s, Nº%4s", p.getEndereco().getCidade(), p.getEndereco().getEstado(), p.getEndereco().getLogradouro(), p.getEndereco().getNumero()) %></td>
-                <td><%= p.getRazaoSocial() %></td>
-                <td><%= p.getCnpj() %></td>                
-                <td>
-                    <form>
-                        <input type="hidden" name="indice" value="<%= lista.indexOf(p)%>"/>
-                        <input type="submit" name="excluir" value="Excluir"/>
-                    </form>
-                </td>
-            </tr>
-            <% } %>
-        </table>        
-    </body>
+<%@include file="WEB-INF/jspf/head.jspf" %>
+<form id="inclusao" class="hide">
+    <h2>Inclusão de Fornecedor</h2>
+    <fieldset class="row">
+        <legend>Dados do Fornecedor</legend>
+        <div class="col s12 m12 input-field">
+            <label for="nome">Nome Fantasia</label>
+            <input type="text" name="nome" id="nome"/>
+        </div>
+        <%@include file="WEB-INF/jspf/formDados.jspf" %>
+        <div class="col s12 m6 input-field">
+            <label for="razaosocial">Razão Social</label>
+            <input type="text" name="razaosocial" id="razaosocial"/>
+        </div>
+        <div class="col s12 m6 input-field">
+            <label for="cnpj">CNPJ</label>
+            <input type="text" name="cnpj" id="cnpj"/>
+        </div>
+        <%@include file="WEB-INF/jspf/formEndereco.jspf" %>
+        <div class="col s12 m12 center-align">
+            <input class="btn btn-large waves-effect waves-light" type="submit" name="incluir" value="Incluir"/>
+        </div>
+    </fieldset>
+</form>
+<div class="row">
+    <div class="col s10 m11">
+        <h2>Lista de Fornecedores</h2>
+    </div>
+    <div class="col s2 m1 add-button">
+        <a id="adicionar" class="btn-floating right-align btn-large waves-effect waves-light red" title="Adicionar fornecedor"><i id="adicionar" class="material-icons">add</i></a>
+    </div>
+</div>
+<% if (!lista.isEmpty()) { %>
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Nome</th>
+        <th>Email</th>
+        <th>Telefone</th>
+        <th>Endereço</th>
+        <th>Razão Social</th>
+        <th>CNPJ</th>
+        <th></th>
+    </tr>
+    <% for (Fornecedor p : lista) {%>
+    <tr>
+        <td><%= lista.indexOf(p)%></td>
+        <td>
+            <%= p.getNome()%> 
+            <a class="waves-effect waves-teal btn-flat" href="FornecedorEdit.jsp?indice=<%= lista.indexOf(p)%>">
+                <i class="material-icons">mode_edit</i>
+            </a>
+        </td>
+        <td><%= p.getEmail()%></td>
+        <td><%= p.getTelefone()%></td>
+        <td><%= String.format("%1s, nº %4s. %2s - %3s", p.getEndereco().getLogradouro(), p.getEndereco().getNumero(), p.getEndereco().getCidade(), p.getEndereco().getEstado()) %></td>
+        <td><%= p.getRazaoSocial()%></td>
+        <td><%= p.getCnpj()%></td>                
+        <td>
+            <form>
+                <input type="hidden" name="indice" value="<%= lista.indexOf(p)%>"/>
+                <input class="btn waves-effect waves-light" type="submit" name="excluir" value="Excluir"/>
+            </form>
+        </td>
+    </tr>
+    <% }%>
+</table> 
+<% } else { %>
+    <p>A lista de Fornecedores está vazia. Para adicionar um novo clique no botão +</p>
+<% }%>      
+</body>
 </html>

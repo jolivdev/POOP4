@@ -1,0 +1,12 @@
+<div class="cliente">
+    <div class="cabeca">
+        <div class="rosto">
+            <div class="franja"></div>
+        </div>
+    </div>
+    <div class="corpo"></div>
+    <div class="notebook">
+        <div class="tela"></div>
+        <div class="teclado"></div>
+    </div>
+</div>

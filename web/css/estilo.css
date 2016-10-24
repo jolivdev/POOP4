@@ -1,0 +1,129 @@
+/* 
+    Created on : 22/10/2016, 21:05:35
+    Author     : Jéssica
+*/
+
+*{
+    margin: 0;
+}
+
+body{
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #333;
+    background-color: #fff;
+}
+
+.cliente{
+    width: 180px;
+    height: 350px;
+    position: absolute;
+    top: 20%;
+    left: 10%;
+}
+
+.cliente .cabeca{
+    width: 100px;
+    height: 120px;
+    position: relative;
+    left: 40px;
+    background-color: #000;
+    border-radius: 40% 40% 20% 0%;
+    transform-origin: center bottom;
+    animation: cabeca 2s infinite ease-in-out;
+}
+
+.cliente .cabeca .rosto{
+    width: 80px;
+    height: 100px;
+    position: relative;
+    top: 10px;
+    left: 10px;
+    border-radius: 30% 30% 40% 40%;
+    background-color: #fff;
+}
+
+.cliente .cabeca .rosto .franja{
+    width: 80px;
+    height: 40px;
+    border-radius: 28% 28% 0% 0%;
+    background-color: #000;
+}
+
+.cliente .cabeca .rosto .olhos{
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    border-radius: 100%;
+    top: 55px;
+    background-color: #000;
+}
+
+.cliente .cabeca .rosto .olho-esquerdo{
+    left: 20px;
+}
+
+.cliente .cabeca .rosto .olho-direito{
+    right: 20px;
+}
+
+.cliente .cabeca .rosto .boca{
+    width: 30px;
+    height: 10px;
+    border: 5px solid #D64541;
+    border-left: 0px;
+    border-right: 0px;
+    border-top: 0px;
+    border-radius: 5% 5% 50% 50%;
+    position: absolute;
+    top: 70px;
+    left: 25px;
+}
+
+.cliente .corpo{
+    width: 110px;
+    position: relative;
+    top: -8px;
+    left: 35px;
+    height: 40px;
+    background-color: #EF4836;
+    border-radius: 100%;
+}
+
+.cliente .notebook{
+    position: relative;
+    top: -30px;
+}
+
+.cliente .notebook .tela{
+    background-color: #fff;
+    position: relative;
+    width: 150px;
+    height: 80px;
+    left: 15px;
+    border-radius: 10% 10% 0% 0%;
+}
+
+.cliente .notebook .teclado{
+    background-color: #fff;
+    position: relative;
+    width: 180px;
+    height: 10px;
+    border-radius: 0% 0% 30% 30%;
+}
+
+@keyframes cabeca{
+    0%{transform: rotate(0deg)}
+    30% {transform: rotate(0deg)}
+    50% {transform: rotate(-5deg)}
+    100%{transform: rotate(0deg)}
+}
+
+.form-control{
+    width: 100%;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
