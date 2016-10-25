@@ -38,6 +38,7 @@
 
 %>
 <%@include file="WEB-INF/jspf/head.jspf" %>
+<%@include file="WEB-INF/jspf/header.jspf" %>
 <form>
     <h2>Inclusão de Fornecedor</h2>
     <fieldset class="row">
@@ -45,38 +46,38 @@
         <input type="hidden" name="indice" value="<%=id%>"/>
         <div class="col s12 m12 input-field">
             <label for="nome">Nome Fantasia</label>
-            <input type="text" name="nome" id="nome" value="<%=fornecedorEditado.getNome()%>"/>
+            <input type="text" name="nome" id="nome" value="<%=fornecedorEditado.getNome()%>" required/>
         </div>
         <div class="col s12 m6 input-field">
             <label for="email">Email</label>
-            <input type="text" name="email" id="email" value="<%=fornecedorEditado.getEmail()%>"/>
+            <input type="text" name="email" id="email" value="<%=fornecedorEditado.getEmail()%>" required/>
         </div>
         <div class="col s12 m6 input-field">
             <label for="telefone">Telefone</label>
-            <input type="text" name="telefone" id="telefone" value="<%=fornecedorEditado.getTelefone()%>"/>
+            <input type="text" name="telefone" id="telefone" value="<%=fornecedorEditado.getTelefone()%>" required/>
         </div>
         <div class="col s12 m6 input-field">
             <label for="razaosocial">Razão Social</label>
-            <input type="text" name="razaosocial" id="razaosocial" value="<%=fornecedorEditado.getRazaoSocial()%>"/>
+            <input type="text" name="razaosocial" id="razaosocial" value="<%=fornecedorEditado.getRazaoSocial()%>" required/>
         </div>
         <div class="col s12 m6 input-field">
             <label for="cnpj">CNPJ</label>
-            <input type="text" name="cnpj" id="cnpj" value="<%=fornecedorEditado.getCnpj()%>"/>
+            <input type="text" name="cnpj" id="cnpj" value="<%=fornecedorEditado.getCnpj()%>" required/>
         </div>
         <div class="col s12 m8 input-field">
             <label for="logradouro">Logradouro (Rua/Av.)</label>
-            <input type="text" name="logradouro" id="logradouro" value="<%=fornecedorEditado.getEndereco().getLogradouro()%>"/>
+            <input type="text" name="logradouro" id="logradouro" value="<%=fornecedorEditado.getEndereco().getLogradouro()%>" required/>
         </div>
         <div class="col s12 m4 input-field">
             <label for="numero">Número</label>
-            <input type="text" name="numero" id="numero" value="<%=fornecedorEditado.getEndereco().getNumero()%>"/>
+            <input type="number" name="numero" id="numero" value="<%=fornecedorEditado.getEndereco().getNumero()%>" required/>
         </div>
         <div class="col s12 m6 input-field">
             <label for="cidade">Cidade</label> 
-            <input type="text" name="cidade" id="cidade" value="<%=fornecedorEditado.getEndereco().getCidade()%>"/>
+            <input type="text" name="cidade" id="cidade" value="<%=fornecedorEditado.getEndereco().getCidade()%>" required/>
         </div>
         <div class="col s12 m6 input-field">
-            <select name="estado" id="estado">
+            <select name="estado" id="estado" required>
                 <option selected="" value="">Selecione o Estado (UF)</option>
                 <option value="Acre">Acre</option>
                 <option value="Alagoas">Alagoas</option>

@@ -1,8 +1,8 @@
 <div class="col s12 m6 input-field">
     <label for="email">Email</label>
-    <input type="text" name="email" id="email"/>
+    <input type="email" name="email" id="email" required/>
 </div>
 <div class="col s12 m6 input-field">
     <label for="telefone">Telefone</label>
-    <input type="text" name="telefone" id="telefone"/>
+    <input type="text" name="telefone" id="telefone" required/>
 </div>

@@ -32,7 +32,7 @@
     }
 
     if (request.getParameter("excluir") != null) {
-        String par = request.getParameter("1");
+        String par = request.getParameter("indice");
         int i = Integer.parseInt(par);
         lista.remove(i);
         response.sendRedirect(request.getRequestURI());
@@ -40,22 +40,23 @@
 %>
 
 <%@include file="WEB-INF/jspf/head.jspf" %>
+<%@include file="WEB-INF/jspf/header.jspf" %>
 <form id="inclusao" class="hide">
     <h2>Inclusão de Cliente</h2>
     <fieldset class="row">
         <legend>Dados do Cliente</legend>
         <div class="col s12 m12 input-field">
             <label for="nome">Nome</label>
-            <input type="text" name="nome" id="nome"/>
+            <input type="text" name="nome" id="nome" required/>
         </div>
         <%@include file="WEB-INF/jspf/formDados.jspf" %>
         <div class="col s12 m6 input-field">
             <label for="cpf">CPF</label>
-            <input type="text" name="cpf" id="cpf"/>
+            <input type="text" name="cpf" id="cpf" required/>
         </div>
         <div class="col s12 m6 input-field">
             <label for="rg">RG</label>
-            <input type="text" name="rg" id="rg"/>
+            <input type="text" name="rg" id="rg" required maxlength="12"/>
         </div>
         <%@include file="WEB-INF/jspf/formEndereco.jspf" %>
         <div class="col s12 m12 center-align">
@@ -86,7 +87,12 @@
     <% for (Cliente p : lista) {%>
     <tr>
         <td><%= lista.indexOf(p)%></td>
-        <td><%= p.getNome()%></td>
+        <td>
+            <%= p.getNome()%> 
+            <a class="waves-effect waves-teal btn-flat" href="ClienteEdit.jsp?indice=<%= lista.indexOf(p)%>">
+                <i class="material-icons">mode_edit</i>
+            </a>
+        </td>
         <td><%= p.getEmail()%></td>
         <td><%= p.getTelefone()%></td>
         <td><%= String.format("%1s, nº %4s. %2s - %3s", p.getEndereco().getLogradouro(), p.getEndereco().getNumero(), p.getEndereco().getCidade(), p.getEndereco().getEstado()) %></td>
@@ -94,8 +100,8 @@
         <td><%= p.getRG()%></td> 
         <td>
             <form>
-                <input type="hidden" name="1" value="<%= lista.indexOf(p)%>"/>
-                <input type="submit" name="excluir" value="Excluir"/>
+                <input type="hidden" name="indice" value="<%= lista.indexOf(p)%>"/>
+                <input class="btn red waves-effect waves-light" type="submit" name="excluir" value="Excluir"/>
             </form>
         </td>
     </tr>

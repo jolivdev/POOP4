@@ -25,8 +25,8 @@
         clienteEditado.setNome(request.getParameter("nome"));
         clienteEditado.setTelefone(request.getParameter("telefone"));
         clienteEditado.setEmail(request.getParameter("email"));
-        clienteEditado.setCPF(request.getParameter("CPF"));
-        clienteEditado.setRG(request.getParameter("RG"));
+        clienteEditado.setCPF(request.getParameter("cpf"));
+        clienteEditado.setRG(request.getParameter("rg"));
         clienteEditado.setEndereco(e);
 
         lista.set(id, clienteEditado);
@@ -41,6 +41,7 @@
     }
 %>
 <%@include file="WEB-INF/jspf/head.jspf" %>
+<%@include file="WEB-INF/jspf/header.jspf" %>
 <form>
     <h2>Edição de Cliente</h2>
     <fieldset class="row">
@@ -48,38 +49,38 @@
         <input type="hidden" name="indice" value="<%=id%>"/>
         <div class="col s12 m12 input-field">
             <label for="nome">Nome</label>
-            <input type="text" name="nome" id="nome" value="<%=clienteEditado.getNome()%>"/>
+            <input type="text" name="nome" id="nome" value="<%=clienteEditado.getNome()%>" required/>
         </div>
         <div class="col s12 m6 input-field">
             <label for="email">Email</label>
-            <input type="text" name="email" id="email" value="<%=clienteEditado.getEmail()%>"/>
+            <input type="text" name="email" id="email" value="<%=clienteEditado.getEmail()%>" required/>
         </div>
         <div class="col s12 m6 input-field">
             <label for="telefone">Telefone</label>
-            <input type="text" name="telefone" id="telefone" value="<%=clienteEditado.getTelefone()%>"/>
+            <input type="text" name="telefone" id="telefone" value="<%=clienteEditado.getTelefone()%>" required/>
         </div>
         <div class="col s12 m6 input-field">
             <label for="cpf">CPF</label>
-            <input type="text" name="cpf" id="cpf" value="<%=clienteEditado.getCPF()%>"/>
+            <input type="text" name="cpf" id="cpf" value="<%=clienteEditado.getCPF()%>" required/>
         </div>
         <div class="col s12 m6 input-field">
             <label for="rg">RG</label>
-            <input type="text" name="rg" id="rg"  value="<%=clienteEditado.getRG()%>"/>
+            <input type="text" name="rg" id="rg"  value="<%=clienteEditado.getRG()%>" required/>
         </div>
         <div class="col s12 m8 input-field">
             <label for="logradouro">Logradouro (Rua/Av.)</label>
-            <input type="text" name="logradouro" id="logradouro" value="<%=clienteEditado.getEndereco().getLogradouro()%>"/>
+            <input type="text" name="logradouro" id="logradouro" value="<%=clienteEditado.getEndereco().getLogradouro()%>" required/>
         </div>
         <div class="col s12 m4 input-field">
             <label for="numero">Número</label>
-            <input type="text" name="numero" id="numero" value="<%=clienteEditado.getEndereco().getNumero()%>"/>
+            <input type="number" name="numero" id="numero" value="<%=clienteEditado.getEndereco().getNumero()%>" required/>
         </div>
         <div class="col s12 m6 input-field">
             <label for="cidade">Cidade</label> 
-            <input type="text" name="cidade" id="cidade" value="<%=clienteEditado.getEndereco().getCidade()%>"/>
+            <input type="text" name="cidade" id="cidade" value="<%=clienteEditado.getEndereco().getCidade()%>" required/>
         </div>
         <div class="col s12 m6 input-field">
-            <select name="estado" id="estado">
+            <select name="estado" id="estado" required>
                 <option selected="" value="">Selecione o Estado (UF)</option>
                 <option value="Acre">Acre</option>
                 <option value="Alagoas">Alagoas</option>

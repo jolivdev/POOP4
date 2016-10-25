@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Cliente/Fornec</title>
+        <title>CliFor</title>
         <meta charset="utf-8">
         <link rel="stylesheet" href="css/materialize.css" media="screen,projection"/>
+        <link rel="stylesheet" href="css/estilo.css"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <script type="text/javascript" src="js/jquery.min.js"></script>
+        <script type="text/javascript" src="js/mask.js"></script>
         <script type="text/javascript" src="js/materialize.min.js"></script>
         <script type="text/javascript">
             $(document).ready(function(){
@@ -13,11 +15,25 @@
                 $("#adicionar").click(function(){
                     $("form#inclusao").toggleClass("hide");
                 });
+                $("#cep").mask("99999-999");
+                $("#cpf").mask("999.999.999-99");
+                $("#cnpj").mask("99.999.999/9999-99");
+                jQuery("#telefone")
+                    .mask("(99) 9999-9999?9")
+                    .focusout(function (event) {  
+                        var target, phone, element;  
+                        target = (event.currentTarget) ? event.currentTarget : event.srcElement;  
+                        phone = target.value.replace(/\D/g, '');
+                        element = $(target);  
+                        element.unmask();  
+                        if(phone.length > 10) {  
+                            element.mask("(99) 99999-999?9");  
+                        } else {  
+                            element.mask("(99) 9999-9999?9");  
+                        }  
+                    });
             });
-            
         </script>
     </head>
     <body>
         <div class="container">
-            <%@include file="header.jspf" %>
-            <main>

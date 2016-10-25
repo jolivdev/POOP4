@@ -1,11 +1,15 @@
-<div class="col m6 s12" id="cliente">
-    <div class="cliente">
+<div class="col m6 s12" id="fornecedor">
+    <div class="fornecedor">
         <div class="cabeca">
             <div class="rosto">
                 <div class="franja"></div>
             </div>
         </div>
-        <div class="corpo"></div>
+        <div class="corpo">
+            <div class="terno">
+                <div class="gravata"></div>
+            </div>
+        </div>
         <div class="notebook">
             <div class="tela">
                 <div class="logo"></div>
@@ -13,5 +17,5 @@
             <div class="teclado"></div>
         </div>
     </div>
-    <h1 class="center-align">Cliente</h1>
+    <h1 class="center-align">Fornecedor</h1>
 </div>

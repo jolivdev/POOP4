@@ -33,22 +33,23 @@
     }
 %>
 <%@include file="WEB-INF/jspf/head.jspf" %>
+<%@include file="WEB-INF/jspf/header.jspf" %>
 <form id="inclusao" class="hide">
     <h2>Inclusão de Fornecedor</h2>
     <fieldset class="row">
         <legend>Dados do Fornecedor</legend>
         <div class="col s12 m12 input-field">
             <label for="nome">Nome Fantasia</label>
-            <input type="text" name="nome" id="nome"/>
+            <input type="text" name="nome" id="nome" required/>
         </div>
         <%@include file="WEB-INF/jspf/formDados.jspf" %>
         <div class="col s12 m6 input-field">
             <label for="razaosocial">Razão Social</label>
-            <input type="text" name="razaosocial" id="razaosocial"/>
+            <input type="text" name="razaosocial" id="razaosocial" required/>
         </div>
         <div class="col s12 m6 input-field">
             <label for="cnpj">CNPJ</label>
-            <input type="text" name="cnpj" id="cnpj"/>
+            <input type="text" name="cnpj" id="cnpj" required/>
         </div>
         <%@include file="WEB-INF/jspf/formEndereco.jspf" %>
         <div class="col s12 m12 center-align">
@@ -93,7 +94,7 @@
         <td>
             <form>
                 <input type="hidden" name="indice" value="<%= lista.indexOf(p)%>"/>
-                <input class="btn waves-effect waves-light" type="submit" name="excluir" value="Excluir"/>
+                <input class="btn red waves-effect waves-light" type="submit" name="excluir" value="Excluir"/>
             </form>
         </td>
     </tr>

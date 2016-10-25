@@ -1,17 +1,17 @@
 <div class="col s12 m8 input-field">
     <label for="logradouro">Logradouro (Rua/Av.)</label>
-    <input type="text" name="logradouro" id="logradouro"/>
+    <input type="text" name="logradouro" id="logradouro" required/>
 </div>
 <div class="col s12 m4 input-field">
     <label for="numero">Número</label>
-    <input type="text" name="numero" id="numero"/>
+    <input type="text" name="numero" id="numero" required/>
 </div>
 <div class="col s12 m6 input-field">
     <label for="cidade">Cidade</label> 
-    <input type="text" name="cidade" id="cidade"/>
+    <input type="text" name="cidade" id="cidade" required/>
 </div>
 <div class="col s12 m6 input-field">
-    <select name="estado" id="estado">
+    <select name="estado" id="estado" required>
         <option selected="" value="">Selecione o Estado (UF)</option>
         <option value="Acre">Acre</option>
         <option value="Alagoas">Alagoas</option>
