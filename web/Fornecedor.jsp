@@ -40,12 +40,12 @@
         <legend>Dados do Fornecedor</legend>
         <div class="col s12 m12 input-field">
             <label for="nome">Nome Fantasia</label>
-            <input type="text" name="nome" id="nome" required/>
+            <input type="text" name="nome" id="nome"  maxlength="100" required/>
         </div>
         <%@include file="WEB-INF/jspf/formDados.jspf" %>
         <div class="col s12 m6 input-field">
             <label for="razaosocial">Razão Social</label>
-            <input type="text" name="razaosocial" id="razaosocial" required/>
+            <input type="text" name="razaosocial" id="razaosocial" maxlength="100" required/>
         </div>
         <div class="col s12 m6 input-field">
             <label for="cnpj">CNPJ</label>

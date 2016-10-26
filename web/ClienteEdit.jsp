@@ -1,4 +1,3 @@
-<%@page import="br.com.fatecpg.cad.ClienteArrayList"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="br.com.fatecpg.cad.Database"%>
 <%@page import="br.com.fatecpg.cad.Cliente"%>
@@ -7,7 +6,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 <%
-    ArrayList<Cliente> lista = ClienteArrayList.getCliente();
+    ArrayList<Cliente> lista = Database.getCliente();
     int id = Integer.parseInt(request.getParameter("indice"));
     Cliente clienteEditado = new Cliente();
     clienteEditado = lista.get(id);

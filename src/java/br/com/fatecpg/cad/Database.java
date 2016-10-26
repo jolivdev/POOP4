@@ -8,4 +8,9 @@ public class Database {
     public static ArrayList<Fornecedor> getFornecedor(){
         return fornecedores;
     }  
+    private static ArrayList<Cliente> cliente = new ArrayList<>();
+    
+    public static ArrayList<Cliente> getCliente(){
+        return cliente;
+    }  
 }

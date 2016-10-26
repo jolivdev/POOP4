@@ -2,13 +2,12 @@
 <%@page import="br.com.fatecpg.cad.Database"%>
 <%@page import="br.com.fatecpg.cad.Cliente"%>
 <%@page import="br.com.fatecpg.cad.Endereco"%>
-<%@page import="br.com.fatecpg.cad.ClienteArrayList"%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 
 <%
-    ArrayList<Cliente> lista = ClienteArrayList.getCliente();
+    ArrayList<Cliente> lista = Database.getCliente();
     if (request.getParameter("incluir") != null) {
         Cliente p = new Cliente();
         Endereco e = new Endereco();
@@ -47,7 +46,7 @@
         <legend>Dados do Cliente</legend>
         <div class="col s12 m12 input-field">
             <label for="nome">Nome</label>
-            <input type="text" name="nome" id="nome" required/>
+            <input type="text" name="nome"  maxlength="100" id="nome" required/>
         </div>
         <%@include file="WEB-INF/jspf/formDados.jspf" %>
         <div class="col s12 m6 input-field">
