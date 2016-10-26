@@ -4,13 +4,16 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/Users/Jéssica/Documents/GitHub/POOP4/web/WEB-INF/jspf/head.jspf</file>
+            <file>file:/C:/Users/Jéssica/Documents/GitHub/POOP4/web/WEB-INF/jspf/headerv2.jspf</file>
+            <file>file:/C:/Users/Jéssica/Documents/GitHub/POOP4/web/WEB-INF/jspf/formEndereco.jspf</file>
             <file>file:/C:/Users/Jéssica/Documents/GitHub/POOP4/web/Fornecedor.jsp</file>
             <file>file:/C:/Users/Jéssica/Documents/GitHub/POOP4/web/FornecedorEdit.jsp</file>
+            <file>file:/C:/Users/Jéssica/Documents/GitHub/POOP4/web/WEB-INF/jspf/formDados.jspf</file>
             <file>file:/C:/Users/Jéssica/Documents/GitHub/POOP4/web/css/estilo.css</file>
+            <file>file:/C:/Users/Jéssica/Documents/GitHub/POOP4/web/js/mask.js</file>
             <file>file:/C:/Users/Jéssica/Documents/GitHub/POOP4/web/Cliente.jsp</file>
-            <file>file:/C:/Users/Jéssica/Documents/GitHub/POOP4/web/ClienteEdit.jsp</file>
             <file>file:/C:/Users/Jéssica/Documents/GitHub/POOP4/web/Menu.jsp</file>
-            <file>file:/C:/Users/Jéssica/Documents/GitHub/POOP4/web/WEB-INF/jspf/fornecedor.jspf</file>
+            <file>file:/C:/Users/Jéssica/Documents/GitHub/POOP4/web/WEB-INF/jspf/header.jspf</file>
         </group>
     </open-files>
 </project-private>

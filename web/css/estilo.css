@@ -31,6 +31,9 @@ body{
     background-color: #000;
     border-radius: 40% 40% 20% 5%;
     transform-origin: center bottom;
+}
+
+#cliente:hover .cabeca{
     animation: cabeca 4s infinite ease-in-out;
 }
 
@@ -157,6 +160,9 @@ body{
     background-color: #000;
     border-radius: 30%;
     transform-origin: center bottom;
+}
+
+#fornecedor:hover .cabeca{
     animation: cabeca 4s infinite ease-in-out;
 }
 
@@ -296,6 +302,10 @@ body{
 
 a #cliente, a #fornecedor{
     color: #4db6ac;
+}
+
+a #cliente:hover, a #fornecedor:hover{
+    color: #F44336;
 }
 
 nav{
